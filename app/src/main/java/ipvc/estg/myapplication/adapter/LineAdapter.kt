@@ -9,7 +9,7 @@ import ipvc.estg.myapplication.dataclasses.Estudante
 import kotlinx.android.synthetic.main.recyclerline.view.*
 
 
-class LineAdapter(val List: ArrayList<Estudante>):RecyclerView.Adapter<LineViewHolder>(){
+class LineAdapter(val list: ArrayList<Estudante>):RecyclerView.Adapter<LineViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LineViewHolder {
 
@@ -20,11 +20,11 @@ class LineAdapter(val List: ArrayList<Estudante>):RecyclerView.Adapter<LineViewH
     }
 
     override fun getItemCount(): Int {
-        return List.size
+        return list.size
     }
 
     override fun onBindViewHolder(holder: LineViewHolder, position: Int) {
-        val currentPlace = List[position]
+        val currentPlace = list[position]
 
         holder.nome.text = currentPlace.nome
         holder.escola.text = currentPlace.escola

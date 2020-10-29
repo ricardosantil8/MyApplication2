@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="welcome">Welcome</string>
+    <string name="open">open</string>
+    <string name="create_new">create new</string>
+    <string name="file">file</string>
 </resources>

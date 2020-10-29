@@ -20,4 +20,57 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
         Toast.makeText(this, R.string.welcome, Toast.LENGTH_SHORT).show()
     }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
+    fun button1(view: View) {
+
+        var edit1 = findViewById<EditText>(R.id.editTextTextPersonName)
+        Toast.makeText(this, edit1.text, Toast.LENGTH_SHORT).show()
+        findViewById<TextView>(R.id.txt1).setText(edit1.text)
+
+    }
+
+    fun button2(view: View) {
+        var edit1 = findViewById<EditText>(R.id.editTextTextPersonName)
+
+        val intent = Intent(this, MainActivity2::class.java).apply {
+            putExtra(PARAM1_NAME, edit1.text.toString())
+        }
+
+        startActivity(intent)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.create_new -> {
+                Toast.makeText(this, "@strings/app_name", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.opcao2 -> {
+                Toast.makeText(this, "opcao2", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.opcao3 -> {
+                Toast.makeText(this, "opcao3", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.opcao4 -> {
+                Toast.makeText(this, "opcao4", Toast.LENGTH_SHORT).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+
 }

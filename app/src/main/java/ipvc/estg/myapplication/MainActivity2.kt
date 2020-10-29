@@ -12,25 +12,25 @@ import kotlinx.android.synthetic.main.activity_main2.*
 
 class MainActivity2 : AppCompatActivity() {
 
-    private lateinit var List: ArrayList<Estudante>
+    private lateinit var myList: ArrayList<Estudante>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-        List = ArrayList<Estudante>()
+        myList = ArrayList<Estudante>()
 
         for (i in 0 until 500) {
-            List.add(Estudante("Nome $i", i*500, "Escola $i"))
+            myList.add(Estudante("Nome $i", i*500, "Escola $i"))
         }
 
-        recycler_view.adapter = LineAdapter(List)
+        recycler_view.adapter = LineAdapter(myList)
         recycler_view.layoutManager = LinearLayoutManager(this)
         //recycler_view.setHasFixedSize(true)
     }
 
     fun insert(view: View) {
-        List.add(0, Estudante("Nome XXX", 22247, "Escola XXX"))
+        myList.add(0, Estudante("Nome XXX", 22247, "Escola XXX"))
         recycler_view.adapter?.notifyDataSetChanged()
 
     }
