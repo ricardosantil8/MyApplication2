@@ -20,6 +20,4 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
         Toast.makeText(this, R.string.welcome, Toast.LENGTH_SHORT).show()
     }
-
-
 }

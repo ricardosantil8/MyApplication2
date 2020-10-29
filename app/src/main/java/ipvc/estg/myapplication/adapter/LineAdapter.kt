@@ -1,17 +1,15 @@
 package ipvc.estg.myapplication.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import ipvc.estg.myapplication.R
-import ipvc.estg.myapplication.dataclasses.Aluno
+import ipvc.estg.myapplication.dataclasses.Estudante
 import kotlinx.android.synthetic.main.recyclerline.view.*
 
 
-class LineAdapter(val list: ArrayList<Aluno>):RecyclerView.Adapter<LineViewHolder>(){
+class LineAdapter(val List: ArrayList<Estudante>):RecyclerView.Adapter<LineViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LineViewHolder {
 
@@ -22,19 +20,17 @@ class LineAdapter(val list: ArrayList<Aluno>):RecyclerView.Adapter<LineViewHolde
     }
 
     override fun getItemCount(): Int {
-        return list.size
+        return List.size
     }
 
     override fun onBindViewHolder(holder: LineViewHolder, position: Int) {
-        val currentPlace = list[position]
+        val currentPlace = List[position]
 
         holder.nome.text = currentPlace.nome
         holder.escola.text = currentPlace.escola
         holder.nnumero.text = currentPlace.numero.toString()
     }
-
 }
-
 class LineViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
     val nome = itemView.nome

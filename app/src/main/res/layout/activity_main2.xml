@@ -15,8 +15,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/recyclerline"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/recyclerline">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -25,6 +25,7 @@
         android:layout_alignParentBottom="true"
         android:layout_height="wrap_content"
         android:text="Insert item"
-        android:onClick="insert"></Button>
+        android:onClick="insert">
+    </Button>
 
 </RelativeLayout>
